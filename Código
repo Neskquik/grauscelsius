@@ -1,0 +1,35 @@
+package ConversaoTemperatura;
+
+import java.util.Scanner; 
+
+class ConversaoTemperatura {
+
+
+    public static double celsiusParaFahrenheit(double celsius) {
+        return (9.0 / 5.0) * celsius + 32.0;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String repetir = "s";
+
+
+        while (repetir.equalsIgnoreCase("s")) {
+
+            System.out.print("Digite a temperatura em Celsius: ");
+            double celsius = scanner.nextDouble();
+
+
+            double fahrenheit = celsiusParaFahrenheit(celsius);
+            System.out.printf("Equivalente em Fahrenheit: %.1f\n", fahrenheit);
+
+
+            System.out.print("Deseja repetir (s/n)? ");
+            repetir = scanner.next();
+        }
+
+
+        scanner.close();
+    }
+}
+
